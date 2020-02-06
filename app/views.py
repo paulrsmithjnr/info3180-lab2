@@ -1,3 +1,4 @@
+
 """
 Flask Documentation:     http://flask.pocoo.org/docs/
 Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
@@ -5,6 +6,7 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 
+import datetime
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 
@@ -22,7 +24,18 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Paul Smith")
+
+
+@app.route('/profile')
+def profile():
+    now = datetime.datetime.now() #today's date
+    #date_joined = datetime.date(2019, 2, 7) #a specific date
+    return render_template('profile.html', date = format_date_joined(now))
+
+
+def format_date_joined(date):
+    return date.strftime("%B, %Y") 
 
 
 ###

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    <div id = "container">
+        <div id="main">
+            <div id = "top">
+                <div id = "photo">
+                    <img src="{{url_for('static', filename = 'Me.jpg')}}" alt="Picture of me">
+                </div>
+
+                <div id = "details">
+                    <h2>Paul Smith</h2>
+                    <p>@psmith</p>
+                    <p>Kingston, Jamaica</p>
+                    <p>Joined {{ date }}</p>
+                </div>
+            </div>
+
+            <div id = "bottom">
+                <div id = "bio">
+                    <p>I am a very optimistic individual who considers himself to be very blessed. I am diligent in everything I do and I aim for nothing but the best.</p>
+                </div>
+
+                <div id = "activity">
+                    <div id="posts"><p><b>7</b><br>Posts</p></div>
+                    <div id="following"><p><b>100</b><br>Following</p></div>
+                    <div id="followers"><p><b>2.5M</b><br>Followers</p></div>
+                </div>
+
+                <div id = "follow-btn">
+                    <button>Follow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
