@@ -29,9 +29,9 @@ def about():
 
 @app.route('/profile')
 def profile():
-    now = datetime.datetime.now() #today's date
+    currentDate = datetime.datetime.now() #today's date
     #date_joined = datetime.date(2019, 2, 7) #a specific date
-    return render_template('profile.html', date = format_date_joined(now))
+    return render_template('profile.html', date = format_date_joined(currentDate))
 
 
 def format_date_joined(date):
